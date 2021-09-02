@@ -1,10 +1,34 @@
 :root {
-	--color-headings: hsl(208, 49%, 24%);
-	--light-red: hsl(356, 100%, 66%);
+	--dark-blue: hsl(208, 49%, 24%);
+	--red: hsl(356, 100%, 66%);
+	--grayish-blue: hsl(207, 13%, 34%);
+	--cta-ligth-red: hsl(13, 100%, 72%);
+	--cta-red: hsl(353, 100%, 62%);
+	--color-cta-hover: hsl(355, 100%, 74%);
+	--color-body-gradient-dark-blue: hsl(237, 17%, 21%);
+	--color-body-gradient-blue: hsl(237, 23%, 32%);
+	--color-footer-text: hsl(207, 2%, 79%);
+	--footer-background: hsl(240, 10%, 16%);
 	font-size: 16px;
 }
 
+body {
+	--color-text: var(--grayish-blue);
+}
+
+.CTA {
+	--rounded: 5rem;
+}
+
 .btn {
+	--rounded: 5rem;
+	--color-accent: none;
+	--color-text: #fff;
+
+	&--filled {
+		--color-accent: #fff;
+		--color-text: var(--red);
+	}
 }
 
 *,
@@ -14,6 +38,7 @@
 }
 
 body {
+	color: var(--color-text);
 	font-family: 'Overpass', sans-serif;
 	font-family: 'Ubuntu', sans-serif;
 	line-height: 1.6;
@@ -25,8 +50,7 @@ h3,
 h4,
 ul,
 li,
-a,
-p {
+a {
 	margin: 0;
 	padding: 0;
 	text-decoration: none;
@@ -39,9 +63,6 @@ img {
 }
 
 .btn {
-	--rounded: 5rem;
-	--color-accent: none;
-
 	background-color: var(--color-accent, red);
 	border: none;
 	border-radius: var(--rounded);
@@ -51,11 +72,6 @@ img {
 	padding: 0.75em 1em;
 	text-decoration: none;
 	outline: none;
-
-	&--filled {
-		--color-accent: #fff;
-		--color-text: var(--light-red);
-	}
 
 	&--ghost {
 		// box-shadow: 0 0 0 0.1rem #fff;
@@ -68,10 +84,26 @@ img {
 	margin-left: 2rem;
 }
 
-.primary-title {
+.primary-title,
+.secondary-title,
+.tertiary-title {
 	font-family: 'Overpass', sans-serif;
+	font-weight: 600;
 	line-height: 1.1;
+}
+
+.primary-title {
 	font-size: 2.1rem;
+}
+
+.secondary-title {
+	color: var(--color-headings);
+	margin: 1em 0;
+}
+
+.tertiary-title {
+	color: var(--color-text, --color-headings);
+	font-size: 1.3rem;
 }
 
 .container {
@@ -81,13 +113,13 @@ img {
 }
 
 .CTA {
-	background-color: var(--light-red);
-	background-image: url(../images/bg-pattern-intro.svg);
+	background: hsl(353, 100%, 62%);
+	background: url(../images/bg-pattern-intro.svg),
+		linear-gradient(hsl(13, 100%, 72%), hsl(353, 100%, 62%));
 	background-size: 350%;
 	background-repeat: no-repeat;
 	background-position: top 35% left 35%;
-	//corregir background
-	border-bottom-left-radius: 5rem;
+	border-bottom-left-radius: var(--rounded);
 	color: #fff;
 	padding: 3em 0;
 	text-align: center;
