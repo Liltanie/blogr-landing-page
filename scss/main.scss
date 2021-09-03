@@ -13,7 +13,8 @@
 }
 
 .CTA,
-.speed {
+.speed,
+footer {
 	--color-accent: #fff;
 	--rounded: 5rem;
 }
@@ -67,6 +68,7 @@ a {
 	padding: 0;
 	text-decoration: none;
 	list-style: none;
+	color: inherit;
 }
 
 img {
@@ -204,5 +206,32 @@ img {
 	img {
 		margin-top: -20rem;
 		transform: scale(1.2);
+	}
+}
+
+footer {
+	align-items: center;
+	background-color: var(--footer-background);
+	border-radius: 0 var(--rounded) 0 0;
+	color: var(--color-footer-text);
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	padding: 5em 0;
+
+	img {
+		padding: 0 5em;
+		height: 2rem;
+		width: auto;
+	}
+
+	ul {
+		padding: 0 5em;
+		margin: 1rem 0;
+
+		h4 {
+			margin: 0.5em 0;
+			color: #fff;
+		}
 	}
 }
