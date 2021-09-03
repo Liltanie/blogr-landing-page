@@ -12,12 +12,15 @@
 	font-size: 16px;
 }
 
-body {
-	--color-text: var(--grayish-blue);
+.CTA,
+.speed {
+	--color-accent: #fff;
+	--rounded: 5rem;
 }
 
-.CTA {
-	--rounded: 5rem;
+.features,
+.benefits {
+	--color-accent: var(--dark-blue);
 }
 
 .btn {
@@ -38,10 +41,19 @@ body {
 }
 
 body {
-	color: var(--color-text);
+	color: var(--grayish-blue);
 	font-family: 'Overpass', sans-serif;
 	font-family: 'Ubuntu', sans-serif;
-	line-height: 1.6;
+	line-height: 1.7;
+}
+
+section {
+	text-align: center;
+	padding: 2.5rem 0;
+
+	p {
+		margin: 1em 0em 2em 0;
+	}
 }
 
 h1,
@@ -58,7 +70,6 @@ a {
 }
 
 img {
-	display: block;
 	max-width: 100%;
 }
 
@@ -82,6 +93,7 @@ img {
 .logo {
 	height: 2rem;
 	margin-left: 2rem;
+	display: block;
 }
 
 .primary-title,
@@ -94,16 +106,17 @@ img {
 
 .primary-title {
 	font-size: 2.1rem;
+	color: var(--color-accent, #000);
 }
 
 .secondary-title {
-	color: var(--color-headings);
 	margin: 1em 0;
+	color: var(--color-accent, blue);
 }
 
 .tertiary-title {
-	color: var(--color-text, --color-headings);
 	font-size: 1.3rem;
+	color: var(--color-accent, blue);
 }
 
 .container {
@@ -166,5 +179,30 @@ img {
 
 	a {
 		color: var(--color-text, #fff);
+	}
+}
+
+.features,
+.benefits {
+	img {
+		margin-bottom: 1rem;
+	}
+}
+
+.speed {
+	background: hsl(237, 17%, 21%);
+	background: url(../images/bg-pattern-circles.svg),
+		linear-gradient(133deg, hsl(237, 17%, 21%) 20%, hsl(237, 23%, 32%) 100%);
+	background-position: top center;
+	background-size: contain;
+	background-repeat: no-repeat;
+	border-radius: 0 var(--rounded) 0 var(--rounded);
+	color: #fff;
+	margin-top: 10rem;
+	padding: 10em 0 4em;
+
+	img {
+		margin-top: -20rem;
+		transform: scale(1.2);
 	}
 }
