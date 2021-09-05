@@ -4,7 +4,7 @@
 	--grayish-blue: hsl(207, 13%, 34%);
 	--cta-ligth-red: hsl(13, 100%, 72%);
 	--cta-red: hsl(353, 100%, 62%);
-	--color-cta-hover: hsl(355, 100%, 74%);
+	--cta-hover: hsl(355, 100%, 74%);
 	--color-body-gradient-dark-blue: hsl(237, 17%, 21%);
 	--color-body-gradient-blue: hsl(237, 23%, 32%);
 	--color-footer-text: hsl(207, 2%, 79%);
@@ -87,9 +87,21 @@ img {
 	text-decoration: none;
 	outline: none;
 
+	&--filled {
+		&:hover,
+		&:focus {
+			background-color: var(--cta-hover);
+			color: #fff;
+		}
+	}
+
 	&--ghost {
-		// box-shadow: 0 0 0 0.1rem #fff;
 		border: 0.1rem solid #fff;
+		&:hover,
+		&:focus {
+			color: var(--cta-hover);
+			background-color: #fff;
+		}
 	}
 }
 
