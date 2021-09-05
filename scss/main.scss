@@ -80,6 +80,7 @@ img {
 	border: none;
 	border-radius: var(--rounded);
 	color: var(--color-text, #fff);
+	cursor: pointer;
 	display: inline-block;
 	font-weight: 700;
 	padding: 0.75em 1em;
@@ -94,8 +95,7 @@ img {
 
 .logo {
 	height: 2rem;
-	margin-left: 2rem;
-	display: block;
+	// margin-left: 2rem;
 }
 
 .primary-title,
@@ -137,9 +137,9 @@ img {
 	border-bottom-left-radius: var(--rounded);
 	color: #fff;
 	padding: 3em 0;
-	text-align: center;
 
 	&__text {
+		text-align: center;
 		margin: 5rem 0;
 
 		p {
@@ -155,16 +155,77 @@ img {
 }
 
 .nav {
-	display: none; //hacer el navbar
+	//corregir el min-width
+	@media screen and (min-width: 35em) {
+		align-items: center;
+		display: flex;
+		width: 85%;
+		max-width: 60em;
+		margin: auto;
+
+		.logo {
+			margin-right: 3rem;
+		}
+
+		.push {
+			margin-left: auto;
+		}
+
+		.dropdown {
+			text-align: left;
+			display: flex;
+			gap: 1em;
+
+			> li {
+				opacity: 0.7;
+
+				&::after {
+					content: url(../images/icon-arrow-light.svg);
+					display: inline-block;
+					transition: transform 250ms ease-in-out;
+					margin-left: 0.5rem;
+				}
+
+				&:hover {
+					opacity: 1;
+					text-decoration: underline;
+
+					&::after {
+						transform: rotate(0.5turn) translate(0, -10%); //translate moves the arrow to the "center"
+					}
+				}
+			}
+
+			li ul {
+				background-color: #fff;
+				border-radius: 0.3em;
+				width: 10em;
+				padding: 1em;
+				gap: 0.5em;
+				// transform: translate(0, 1em);
+				// margin-top: 1em;
+
+				a {
+					color: #000;
+					font-weight: 300;
+
+					&:hover {
+						font-weight: 500;
+					}
+				}
+			}
+		}
+	}
 }
 
 .dropdown {
 	li {
+		font-weight: 500;
 		position: relative;
 		display: inline-block;
 
 		&:hover > ul {
-			display: block;
+			display: grid;
 		}
 	}
 
