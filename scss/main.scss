@@ -22,6 +22,11 @@
 		@content;
 	}
 }
+@mixin for-tablet-landscape-down {
+	@media (max-width: 899px) {
+		@content;
+	}
+}
 @mixin for-tablet-landscape-up {
 	@media (min-width: 900px) {
 		@content;
@@ -43,6 +48,11 @@
 footer {
 	--color-accent: #fff;
 	--rounded: 5rem;
+}
+
+.nav__dropdown-and-btns,
+.dropdown ul {
+	--rounded: 0.25rem;
 }
 
 .features,
@@ -194,12 +204,107 @@ img {
 }
 
 .nav {
+	width: 85%;
+	max-width: 60em;
+	margin: auto;
+
+	@include for-tablet-landscape-down() {
+		--color-text: #000;
+		position: relative;
+		.hamburger {
+			position: absolute;
+			right: 0;
+		}
+
+		&__dropdown-and-btns {
+			background-color: #fff;
+			border-radius: var(--rounded);
+			box-shadow: 0 0.3em 1.3em 0 hsla(0, 0%, 0%, 0.05);
+			padding: 2em;
+			position: absolute;
+			left: 0;
+			right: 0;
+			margin: 1.5em auto 0;
+			width: 100%;
+
+			&,
+			> * {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+			}
+		}
+
+		.dropdown {
+			text-align: center;
+			gap: 1em;
+			position: relative;
+			width: 100%;
+			margin-bottom: 2rem;
+
+			> li {
+				width: 100%;
+
+				> a::after {
+					content: url(../images/icon-arrow-dark.svg);
+					display: inline-block;
+					transition: transform 250ms ease-in-out;
+					margin-left: 0.5rem;
+				}
+
+				&:hover > a::after {
+					transform: rotate(0.5turn) translate(0, -10%); //translate moves the arrow to the "center"
+				}
+			}
+
+			li ul {
+				border-radius: var(--rounded);
+				background-color: #eee;
+				padding: 1em 0;
+				width: 100%;
+				position: relative;
+				margin-top: 1em;
+				--color-text: var(--grayish-blue);
+
+				li + li {
+					margin-top: 0.5em;
+				}
+			}
+
+			&::after {
+				position: absolute;
+				bottom: -1rem;
+				content: '';
+				width: 100%;
+				height: 0.1rem;
+				background-color: #eee;
+			}
+		}
+
+		.btn--simple {
+			color: #000;
+		}
+
+		.btn--filled {
+			background: linear-gradient(to right, hsl(13, 100%, 72%), hsl(353, 100%, 62%));
+			color: #fff;
+			padding: 0.75em 2em;
+		}
+	}
+
 	@include for-tablet-landscape-up() {
+		&__dropdown-and-btns {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			width: 100%;
+		}
 		align-items: center;
 		display: flex;
-		width: 85%;
-		max-width: 60em;
-		margin: auto;
+
+		.hamburger {
+			display: none;
+		}
 
 		.logo {
 			margin-right: 3rem;
