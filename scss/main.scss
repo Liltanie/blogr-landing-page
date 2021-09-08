@@ -211,6 +211,7 @@ img {
 	@include for-tablet-landscape-down() {
 		--color-text: #000;
 		position: relative;
+
 		.hamburger {
 			position: absolute;
 			right: 0;
@@ -226,18 +227,21 @@ img {
 			right: 0;
 			margin: 1.5em auto 0;
 			width: 100%;
+			display: flex;
 
 			&,
 			> * {
-				display: flex;
 				flex-direction: column;
 				align-items: center;
 			}
+
+			display: none; //for toggle
 		}
 
 		.dropdown {
-			text-align: center;
+			display: flex;
 			gap: 1em;
+			text-align: center;
 			position: relative;
 			width: 100%;
 			margin-bottom: 2rem;
@@ -430,12 +434,37 @@ footer {
 	}
 
 	ul {
-		padding: 0 5em;
-		margin: 1rem 0;
+		padding: 1rem 5em;
+	}
+
+	h4 {
+		margin: 0.5em 0;
+		color: #fff;
+	}
+
+	li:hover,
+	li:focus {
+		color: #fff;
+	}
+
+	@include for-tablet-landscape-up() {
+		align-items: flex-start;
+		flex-direction: row;
+		gap: 15%;
+		text-align: left;
+		padding-left: 10%;
+
+		ul,
+		img {
+			padding: 0;
+		}
 
 		h4 {
-			margin: 0.5em 0;
-			color: #fff;
+			margin: 0 0 1.5em;
+		}
+
+		li {
+			margin-top: 0.3em;
 		}
 	}
 }
