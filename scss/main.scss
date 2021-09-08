@@ -401,9 +401,8 @@ img {
 
 .features {
 	@include for-tablet-landscape-up() {
-		// background-color: rgb(230, 230, 230);
 		position: relative;
-		padding: 10em 0 10em;
+		padding: 10rem 0;
 		overflow: hidden;
 
 		h2 {
@@ -441,12 +440,71 @@ img {
 	background-repeat: no-repeat;
 	border-radius: 0 var(--rounded) 0 var(--rounded);
 	color: #fff;
-	margin-top: 10rem;
 	padding: 10em 0 4em;
 
-	img {
-		margin-top: -20rem;
-		transform: scale(1.2);
+	@include for-tablet-landscape-down() {
+		margin-top: 10rem;
+
+		img {
+			margin-top: -20rem;
+			transform: scale(1.2);
+		}
+	}
+
+	@include for-tablet-landscape-up() {
+		position: relative;
+		padding: 5em;
+		padding: 0;
+		text-align: left;
+
+		.container {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+
+		&__text {
+			padding: 5em 0;
+			width: 50%;
+		}
+
+		p,
+		h2 {
+			margin: 0;
+		}
+
+		p {
+			margin-top: 1em;
+			font-size: 0.9rem;
+		}
+
+		img {
+			width: calc(9% + 4em);
+			transform: scale(3) translate(30%, 0);
+		}
+	}
+}
+
+.benefits {
+	@include for-tablet-landscape-up() {
+		padding: 5em 0;
+		text-align: left;
+
+		.container {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+
+		p {
+			font-size: 0.95rem;
+		}
+
+		img {
+			content: url(../images/illustration-laptop-desktop.svg);
+			width: 90%;
+			margin-left: -45%;
+		}
 	}
 }
 
