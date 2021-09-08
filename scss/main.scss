@@ -172,7 +172,7 @@ img {
 
 .container {
 	width: 80vw;
-	max-width: 40rem;
+	max-width: 60rem;
 	margin: auto;
 }
 
@@ -396,6 +396,39 @@ img {
 .benefits {
 	img {
 		margin-bottom: 1rem;
+	}
+}
+
+.features {
+	@include for-tablet-landscape-up() {
+		// background-color: rgb(230, 230, 230);
+		position: relative;
+		padding: 10em 0 10em;
+		overflow: hidden;
+
+		h2 {
+			margin: 0 0 3em;
+		}
+
+		p,
+		h3 {
+			text-align: left;
+			max-width: 50%;
+		}
+
+		p {
+			font-size: 0.95rem;
+		}
+
+		img {
+			position: absolute;
+			content: url(../images/illustration-editor-desktop.svg);
+			top: 0;
+			bottom: 0;
+			margin: auto;
+			right: -17%;
+			width: 60%;
+		}
 	}
 }
 
