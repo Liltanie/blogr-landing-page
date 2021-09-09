@@ -537,6 +537,7 @@ footer {
 	li:hover,
 	li:focus {
 		color: #fff;
+		margin-top: 0.3em;
 	}
 
 	@include for-tablet-landscape-up() {
@@ -553,10 +554,6 @@ footer {
 
 		h4 {
 			margin: 0 0 1.5em;
-		}
-
-		li {
-			margin-top: 0.3em;
 		}
 	}
 }
