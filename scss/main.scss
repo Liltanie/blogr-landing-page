@@ -89,7 +89,7 @@ section {
 	padding: 2.5rem 0;
 
 	p {
-		margin: 1em 0em 2em 0;
+		margin: 2em 0;
 	}
 }
 
@@ -174,13 +174,13 @@ img {
 
 .container {
 	width: 80vw;
-	max-width: 60rem;
+	max-width: 65rem;
 	margin: auto;
 }
 
 .CTA {
 	background: hsl(353, 100%, 62%);
-	background: url(../images/bg-pattern-intro.svg) top -25em right -45em / 100em no-repeat,
+	background: url(../images/bg-pattern-intro.svg) top -14em right -35em / 80em no-repeat,
 		linear-gradient(hsl(13, 100%, 72%), hsl(353, 100%, 62%));
 	border-bottom-left-radius: var(--rounded);
 	color: #fff;
@@ -201,7 +201,7 @@ img {
 		margin: 0.25em;
 	}
 
-	@include for-tablet-landscape-up() {
+	@include for-tablet-portrait-up() {
 		background: url(../images/bg-pattern-intro.svg) top -80em right -80em / 190em no-repeat,
 			linear-gradient(to right, hsl(13, 100%, 72%), hsl(353, 100%, 62%));
 	}
@@ -430,7 +430,7 @@ img {
 			bottom: 0;
 			margin: auto;
 			right: -17%;
-			width: 60%;
+			width: 55%;
 		}
 	}
 }
@@ -499,6 +499,10 @@ img {
 			align-items: center;
 		}
 
+		&__text {
+			width: 50%;
+		}
+
 		p {
 			font-size: 0.95rem;
 		}
@@ -506,7 +510,7 @@ img {
 		img {
 			content: url(../images/illustration-laptop-desktop.svg);
 			width: 90%;
-			margin-left: -45%;
+			margin-left: -51%;
 		}
 	}
 }
