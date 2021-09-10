@@ -144,7 +144,6 @@ img {
 
 .logo {
 	height: 2rem;
-	// margin-left: 2rem;
 }
 
 .primary-title,
@@ -178,11 +177,8 @@ img {
 
 .CTA {
 	background: hsl(353, 100%, 62%);
-	background: url(../images/bg-pattern-intro.svg),
+	background: url(../images/bg-pattern-intro.svg) top -25em right -45em / 100em no-repeat,
 		linear-gradient(hsl(13, 100%, 72%), hsl(353, 100%, 62%));
-	background-size: 350%;
-	background-repeat: no-repeat;
-	background-position: top 35% left 35%;
 	border-bottom-left-radius: var(--rounded);
 	color: #fff;
 	padding: 3em 0;
@@ -200,6 +196,11 @@ img {
 
 	.btn {
 		margin: 0.25em;
+	}
+
+	@include for-tablet-landscape-up() {
+		background: url(../images/bg-pattern-intro.svg) top -80em right -80em / 190em no-repeat,
+			linear-gradient(to right, hsl(13, 100%, 72%), hsl(353, 100%, 62%));
 	}
 }
 
@@ -433,11 +434,8 @@ img {
 
 .speed {
 	background: hsl(237, 17%, 21%);
-	background: url(../images/bg-pattern-circles.svg),
+	background: url(../images/bg-pattern-circles.svg) center -15em / 35em no-repeat,
 		linear-gradient(133deg, hsl(237, 17%, 21%) 20%, hsl(237, 23%, 32%) 100%);
-	background-position: top center;
-	background-size: contain;
-	background-repeat: no-repeat;
 	border-radius: 0 var(--rounded) 0 var(--rounded);
 	color: #fff;
 	padding: 10em 0 4em;
@@ -453,8 +451,9 @@ img {
 	}
 
 	@include for-tablet-landscape-up() {
+		background: url(../images/bg-pattern-circles.svg) -10em -25em / 50em no-repeat,
+			linear-gradient(133deg, hsl(237, 17%, 21%) 20%, hsl(237, 23%, 32%) 100%);
 		position: relative;
-		padding: 5em;
 		padding: 0;
 		text-align: left;
 
